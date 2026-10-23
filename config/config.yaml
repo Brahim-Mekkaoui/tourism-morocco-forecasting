@@ -1,0 +1,160 @@
+# Tourism Morocco Forecasting & Intelligence Dashboard
+# Main Configuration File
+# Generated: 2026-10-06
+
+project:
+  name: "Tourism Morocco Forecasting & Intelligence Dashboard"
+  version: "1.0.0"
+  author: "MEKKAOUI Brahim"
+  supervisor: "KHTIRA Rachida"
+  institution: "ESI + DEPF"
+
+# Data Configuration
+data:
+  manar_path: "data/manar"
+  output_path: "outputs"
+  cache_path: "cache"
+
+  # Date range for analysis
+  date_range:
+    start: "2020-01-01"
+    end: "2026-07-31"
+
+  # Data quality thresholds
+  quality_thresholds:
+    max_missing_percentage: 10
+    outlier_zscore: 3
+    min_observations: 12
+
+# Google Trends Configuration
+google_trends:
+  # API Configuration
+  api:
+    timeframe: "2020-01-01 2026-07-31"
+    language: "all"  # Multilingual: EN, FR, ES, DE
+    geo: "MA"  # Morocco
+    retry_attempts: 3
+    retry_delay: 2
+    timeout: 30
+
+  # Feature Engineering
+  normalization: "minmax"  # minmax or zscore
+  smoothing:
+    window: 3
+    method: "rolling_mean"
+
+# Feature Engineering Configuration
+features:
+  dimensionality_reduction:
+    pca:
+      n_components: 3
+      random_state: 42
+    pls:
+      n_components: 3
+      random_state: 42
+
+  # Feature selection thresholds
+  correlation_threshold: 0.5
+  variance_threshold: 0.01
+
+# Model Configuration
+models:
+  random_state: 42
+
+  # SARIMA Configuration
+  sarima:
+    order: [1, 1, 1]
+    seasonal_order: [1, 1, 1, 12]
+    method: "lbfgs"
+    disp: False
+
+  # SARIMAX Configuration
+  sarimax:
+    order: [1, 1, 1]
+    seasonal_order: [1, 1, 1, 12]
+    method: "lbfgs"
+    disp: False
+    enforce_stationarity: False
+    enforce_invertibility: False
+
+  # Training Configuration
+  train_test_split: 0.8
+  validation_window: 12
+
+# Temporal Validation Configuration
+validation:
+  method: "rolling_window"  # rolling_window or walk_forward
+  window_size: 12
+  step_size: 1
+  min_train_size: 24
+
+  # Metrics for model selection
+  primary_metric: "rmse"  # rmse, mae, or mape
+  secondary_metrics: ["mae", "mape", "r2"]
+
+# Forecasting Configuration
+forecasting:
+  # Forecast horizons (months)
+  horizons: [1, 3, 6, 12]
+
+  # Confidence intervals
+  confidence_intervals: [0.68, 0.95]
+
+  # Nowcasting configuration
+  nowcasting:
+    enabled: true
+    lag: 0  # Current month lag to official data
+
+# Crisis Analysis Configuration
+crisis_analysis:
+  enabled: true
+  periods:
+    covid19:
+      start: "2020-03-01"
+      end: "2020-12-31"
+      name: "COVID-19 Pandemic"
+    al_haouz:
+      start: "2023-09-08"
+      end: "2023-10-31"
+      name: "Al Haouz Earthquake"
+
+# Dashboard Configuration
+dashboard:
+  title: "Tourism Morocco Forecasting & Intelligence Dashboard"
+  theme: "light"
+  refresh_interval: 3600  # seconds
+
+  pages:
+    - name: "executive"
+      title: "Executive Summary"
+      icon: "📊"
+    - name: "tourism_analytics"
+      title: "Tourism Analytics"
+      icon: "🏨"
+    - name: "google_trends"
+      title: "Google Trends Analysis"
+      icon: "📈"
+    - name: "model_performance"
+      title: "Model Performance"
+      icon: "🎯"
+    - name: "forecast"
+      title: "Forecasts"
+      icon: "🔮"
+    - name: "crisis_analysis"
+      title: "Crisis Analysis"
+      icon: "⚠️"
+    - name: "data_quality"
+      title: "Data Quality"
+      icon: "✓"
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/tourism_dashboard.log"
+  max_bytes: 10485760  # 10MB
+  backup_count: 5
+
+# Environment
+environment: "development"  # development, staging, production
+debug: False

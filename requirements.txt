@@ -1,0 +1,59 @@
+# Tourism Morocco Forecasting & Intelligence Dashboard
+# Core Dependencies
+# Pinned for Python 3.12 (cp312 wheels available)
+# Generated: 2026-10-23
+
+# Data Handling & Analysis
+pandas>=2.3.3
+numpy>=2.3.5
+openpyxl>=3.1.5
+
+# Time Series & Statistical Models
+statsmodels>=0.14.4
+scikit-learn>=1.8.0
+
+# APIs & Web
+pytrends>=4.9.2
+requests>=2.31.0
+
+# Visualization
+matplotlib>=3.10.8
+seaborn>=0.13.2
+plotly>=6.8.0
+
+# Web Framework
+streamlit>=1.40.1
+
+# Configuration
+pyyaml>=6.0.3
+
+# Model Persistence
+joblib>=1.5.3
+
+# Date & Time Utilities
+python-dateutil>=2.9.0.post0
+
+# Testing
+pytest>=9.1.1
+pytest-cov>=7.1.0
+
+# Code Quality
+black>=26.10.1
+flake8>=7.4.1
+isort>=9.0.2
+
+# Logging & Monitoring
+python-dotenv>=1.2.2
+
+# Document Generation
+python-docx>=1.2.0
+
+# Development
+ipython>=9.17.1
+jupyter>=1.0.0
+
+# Optional: Advanced Forecasting (Future)
+# pmdarima>=2.0.0
+# prophet>=1.1.0
+# lightgbm>=4.0.0
+# xgboost>=2.0.0

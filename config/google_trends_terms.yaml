@@ -1,0 +1,104 @@
+# Google Trends Search Terms - Multilingual
+# 53 terms across English, French, Spanish, and German
+# Categories: Destinations, Activities, Services, General Tourism
+
+# ENGLISH TERMS (13)
+english:
+  destinations:
+    - "Marrakesh"
+    - "Casablanca"
+    - "Fez"
+    - "Tangier"
+    - "Agadir"
+  activities:
+    - "Morocco travel"
+    - "Riad Morocco"
+    - "Sahara desert tour"
+  general:
+    - "Morocco tourism"
+    - "Visit Morocco"
+    - "Morocco hotels"
+    - "Morocco vacation"
+    - "Morocco tourism board"
+
+# FRENCH TERMS (13)
+french:
+  destinations:
+    - "Marrakech"
+    - "Casablanca"
+    - "Fès"
+    - "Tanger"
+    - "Agadir"
+  activities:
+    - "Voyage Maroc"
+    - "Riad Maroc"
+    - "Désert du Sahara"
+  general:
+    - "Tourisme Maroc"
+    - "Visiter Maroc"
+    - "Hôtels Maroc"
+    - "Vacances Maroc"
+    - "Office du tourisme Maroc"
+
+# SPANISH TERMS (13)
+spanish:
+  destinations:
+    - "Marrakech"
+    - "Casablanca"
+    - "Fez"
+    - "Tánger"
+    - "Agadir"
+  activities:
+    - "Viaje Marruecos"
+    - "Riad Marruecos"
+    - "Desierto del Sahara"
+  general:
+    - "Turismo Marruecos"
+    - "Visitar Marruecos"
+    - "Hoteles Marruecos"
+    - "Vacaciones Marruecos"
+    - "Oficina de turismo Marruecos"
+
+# GERMAN TERMS (13)
+german:
+  destinations:
+    - "Marrakesch"
+    - "Casablanca"
+    - "Fes"
+    - "Tanger"
+    - "Agadir"
+  activities:
+    - "Marokko Reise"
+    - "Riad Marokko"
+    - "Sahara Wüste"
+  general:
+    - "Marokko Tourismus"
+    - "Marokko besuchen"
+    - "Marokko Hotels"
+    - "Marokko Urlaub"
+    - "Marokko Tourismusbüro"
+
+# ADDITIONAL TERMS (1 wildcard per language to reach 53 total)
+additional:
+  english: "Morocco"
+  french: "Maroc"
+  spanish: "Marruecos"
+  german: "Marokko"
+
+# TERM METADATA
+metadata:
+  total_terms: 53
+  languages: 4
+  categories:
+    - "destinations"
+    - "activities"
+    - "general"
+    - "additional"
+  normalized_languages:
+    english: "en"
+    french: "fr"
+    spanish: "es"
+    german: "de"
+  data_source: "Google Trends API (pytrends)"
+  collection_method: "SERP scraping via pytrends"
+  frequency: "Weekly or as needed"
